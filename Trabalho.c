@@ -132,11 +132,11 @@ void Qst6(int *vetor){
 }
 int main(){
     
-    int opcao,loop = 0;
+    int opcao,loop = 0, loopin = 0;
     char resp;
 
     do{
-        setlocale(LC_ALL,"");
+        setlocale(LC_ALL,"portuguese");
 
         printf("\n||============================================================================||\n");
         printf("||-------->>>                   MENU | TRABALHO                    <<<--------||\n");
@@ -179,18 +179,24 @@ int main(){
                 printf("\nErro!!! Escolha entre as opcoes acima, de 1 a 7!!!\n\n");
             break;
         }
-        printf("\n\nDeseja continuar? \n[S]-Sim | [N]-Nao : ");
-        scanf(" %c",&resp);
+        do{
+            printf("\n\nDeseja continuar? \n[S]-Sim | [N]-Nao : ");
+            scanf(" %c",&resp);
 
             if(resp == 'S'||resp == 's'){
                 loop = 1;
+                loopin = 0;
             }else if(resp == 'N'||resp == 'n'){
                 printf("\nOk, encerrando...\n\n");
                 loop = 0;
+                loopin = 0;
                 
             }else{
                 printf("\nEscolha entre [S|s] ou [N|n] !!!\n");
+                loop = 0;
+                loopin = 1;
             }
+        }while(loopin == 1);
             system("cls");  
             /* system("cls") é usado para limpar a tela. */
 
